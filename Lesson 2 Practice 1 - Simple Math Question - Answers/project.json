@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 2 Practice 1 - Simple Math Question - Answers",
+  "description": "Project",
+  "main": "C:\\Users\\folkner\\Documents\\UiPath\\Lesson 2 Practice 1 - Simple Math Question - Answers\\Simple math question.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.1.0.153",
+  "projectVersion": "1.0.6597.36949",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

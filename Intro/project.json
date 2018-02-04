@@ -1,0 +1,14 @@
+{
+  "name": "Intro",
+  "description": "Intro",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.1.0.153",
+  "projectVersion": "1.0.6597.32283",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

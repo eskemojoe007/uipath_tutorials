@@ -1,0 +1,273 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Main_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Core.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="GSP" Name="Origin" />
+      <Variable x:TypeArguments="x:String" Default="DAL" Name="Destination" />
+      <Variable x:TypeArguments="x:String" Default="01/20/2018" Name="outboundDateString" />
+      <Variable x:TypeArguments="x:String" Default="01/25/2018" Name="returnDateSTring" />
+    </Sequence.Variables>
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="https://www.southwest.com/flight/search-flight.html">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  originAirport_di...'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[Origin]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2a486ffba7c58e2316d64d62837393af" Selector="&lt;webctrl id='originAirport_displayed' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LI  originAirport_displ...'" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition OffsetX="88" OffsetY="8" Position="TopLeft" />
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8a6a5ddd9d08545c2a43affb3d599755" Selector="&lt;webctrl id='originAirport_displayed_option0' tag='LI' /&gt;" WaitForReady="COMPLETE" />
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  destinationAirport'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="True" Text="[Destination]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl id='destinationAirport_displayed' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LI  destinationAirport_displ...'" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition OffsetX="88" OffsetY="8" Position="TopLeft" />
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl id='destinationAirport_displayed_option0' tag='LI' /&gt;" WaitForReady="COMPLETE" />
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  outboundDate'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[Nothing]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="264b91f76ff43d6ad9d1762a4bce17d2" Selector="&lt;webctrl id='outboundDate' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  outboundDate'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[outboundDateString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7028c0f5d73dc6337dd736588b2f67b9" Selector="&lt;webctrl id='outboundDate' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  returnDate'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[Nothing]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2b817642346b2b6eec04257d8dc4fd69" Selector="&lt;webctrl id='returnDate' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  returnDate'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="[returnDateSTring]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2b817642346b2b6eec04257d8dc4fd69" Selector="&lt;webctrl id='returnDate' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select item 'SELECT  adultPassengerC...'" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="1 Adult Age 2+">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="16">
+                  <x:String>0 Adults</x:String>
+                  <x:String>1 Adult Age 2+</x:String>
+                  <x:String>2 Adults</x:String>
+                  <x:String>3 Adults</x:String>
+                  <x:String>4 Adults</x:String>
+                  <x:String>5 Adults</x:String>
+                  <x:String>6 Adults</x:String>
+                  <x:String>7 Adults</x:String>
+                  <x:String>8 Adults</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b6051cac1543f6cd0830e8992f4e8723" Selector="&lt;webctrl id='adultPassengerCount' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  submitButton'" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition OffsetX="42" OffsetY="14" Position="TopLeft" />
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="870152c03e00485692c42f84bd23614f" Selector="&lt;webctrl id='submitButton' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="Data scraping" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      </Sequence.Variables>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Southwest Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="16a69c59a0bc17d938d83b6b9dd25a51" Selector="&lt;html title='Southwest Airlines - Select Flight(s)' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'TBODY'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column name='Column1' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='depart_column*' tag='td' idx='1' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='bugText' tag='span' idx='1' /&gt;&lt;webctrl class='time' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column name='Column2' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='depart_column highlightColumn' tag='td' idx='1' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='bugText' tag='span' idx='1' /&gt;&lt;webctrl class='indicator' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column name='Column3' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='arrive_column' tag='td' idx='1' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='bugText nextDayContainer' tag='span' idx='1' /&gt;&lt;webctrl class='time' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column name='Column4' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='arrive_column' tag='td' idx='1' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='bugText nextDayContainer' tag='span' idx='1' /&gt;&lt;webctrl class='indicator' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column name='Column5' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='flight_column' tag='td' idx='1' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='swa_td_flightNumber swa_tables_td_inner' tag='span' idx='1' /&gt;&lt;webctrl class='swa_text_flightNumber' tag='span' idx='1' /&gt;&lt;webctrl class='bugText' tag='span' idx='1' /&gt;&lt;webctrl class='bugLinkText js-flight-performance' tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column name='Column6' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='routing_column' tag='td' idx='1' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='bugText' tag='span' idx='1' /&gt;&lt;webctrl class='bugLinkRouting js-flight-routing' tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column name='TravelTime' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='5' /&gt;&lt;webctrl class='cellWrapper' tag='div' idx='1' /&gt;&lt;webctrl class='bugText duration' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column name='BusinessSelect' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='price_column' tag='td' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer_outer' tag='div' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer' tag='div' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer_inner' tag='div' idx='1' /&gt;&lt;webctrl class='productPricing' tag='div' idx='1' /&gt;&lt;webctrl class='product_info' tag='div' idx='1' /&gt;&lt;webctrl class='product_price' tag='label' idx='1' /&gt;&lt;/column&gt;&lt;column name='Anytime' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='price_column' tag='td' idx='2' /&gt;&lt;webctrl class='radioButtonRelativeContainer_outer' tag='div' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer' tag='div' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer_inner' tag='div' idx='1' /&gt;&lt;webctrl class='productPricing' tag='div' idx='1' /&gt;&lt;webctrl class='product_info' tag='div' idx='1' /&gt;&lt;webctrl class='product_price' tag='label' idx='1' /&gt;&lt;/column&gt;&lt;column name='WannaGetAway' attr='text' exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl class='price_column' tag='td' idx='3' /&gt;&lt;webctrl class='radioButtonRelativeContainer_outer' tag='div' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer' tag='div' idx='1' /&gt;&lt;webctrl class='radioButtonRelativeContainer_inner' tag='div' idx='1' /&gt;&lt;webctrl class='productPricing' tag='div' idx='1' /&gt;&lt;webctrl class='product_info' tag='div' idx='1' /&gt;&lt;webctrl class='product_price' tag='label' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="90d9b348915ab28fc9ed04089dc34a08" Selector="&lt;webctrl parentid='faresOutbound' tag='TBODY' /&gt;" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+              <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[ExtractDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="C:\Users\folkner\Desktop\output.csv" sap2010:WorkflowViewState.IdRef="WriteCsvFile_2" />
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+    <Sequence DisplayName="Screen scraping" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ui:GenericValue" Name="InputQ" />
+      </Sequence.Variables>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'MSNcom Ho Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="84a8f754827189afbc5bbaa3fdbdb681" Selector="&lt;html title='MSN.com - Hotmail, Outlook, Skype, Bing, Latest News, Photos &amp;amp; V*' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get visible text 'INPUT  q'" FormattedText="False" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+                <ui:GetVisibleText.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="145f60322b24d7cde03a61e6f8c8beb3" Selector="&lt;webctrl id='q' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                </ui:GetVisibleText.Target>
+                <ui:GetVisibleText.Text>
+                  <OutArgument x:TypeArguments="ui:GenericValue">[InputQ]</OutArgument>
+                </ui:GetVisibleText.Text>
+              </ui:GetVisibleText>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>dzVDOlxVc2Vyc1xmb2xrbmVyXERvY3VtZW50c1xVaVBhdGhcU291dGh3ZXN0XE1haW4ueGFtbEE+A8gBDgIBAUA0QDkCAQVBNEE5AgEEQjRCQAIBA0M0Q0ACAQJFBZcBFgIBIZgBBa4BEAIBDq8BBcYBEAIBBkW7AUXwAQIBSEsLlAEWAgEimgE6mgFXAgEPnAEHrQEZAgEQswEHxQEZAgEHTA1QGwIBRFENWBgCAUBZDV0bAgE8Xg1lGAIBOGYNahsCATVrDW8bAgExcA10GwIBLnUNeRsCASp6DYsBHQIBJ4wBDZMBGAIBI5wBngKcAdwCAgEgogENqgEYAgERswGeArMBgAMCAQ25AQ3CARgCAQhOoAFO3AECAUdMswJMvQICAUVWoAFW4QECAUNTOVM8AgFCUyxTMAIBQVtnW6gBAgE/WbICWcECAgE9Y2djrQECATtgOWA8AgE6YCxgMAIBOWigAWjRAQIBN2asAma3AgIBNm2gAW3RAQIBNGutAmvDAgIBMnKgAXLPAQIBMHCqAnC1AgIBL3egAXfPAQIBLXWqAnW+AgIBK3rPAXrfAQIBKIkBoAGJAdkBAgEpkQGgAZEB0gECASaOATmOAT0CASWOASyOATACASSjAQ+jAVYCAR6kAQ+oASACARapAQ+pAfMBAgESugEPwQEjAgEJowEfowEpAgEfpAH9IaQBgiICAR2mAaIBpgHaAQIBHKQBhQGkAYoBAgEbpAFLpAFRAgEapAFcpAFwAgEYpAHJAaQBuSECARepAVCpAWQCARSpAZoBqQG/AQIBE7wBogG8AcgBAgEMvwFCvwFKAgEK</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="TypeInto_1" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="TypeInto_2" sap:VirtualizedContainerService.HintSize="314,96" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="314,68" />
+      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="TypeInto_4" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="TypeInto_5" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="TypeInto_6" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_1" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Click_3" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="336,1664">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="436,1763">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="ExtractData_2" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="WriteCsvFile_2" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="336,419">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_6" sap:VirtualizedContainerService.HintSize="414,565" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="436,689">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetVisibleText_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_18" sap:VirtualizedContainerService.HintSize="336,230">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_7" sap:VirtualizedContainerService.HintSize="414,376" />
+      <sap2010:ViewStateData Id="Sequence_19" sap:VirtualizedContainerService.HintSize="436,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="458,3156">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="498,3236" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

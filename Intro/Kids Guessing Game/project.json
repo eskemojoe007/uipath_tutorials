@@ -1,0 +1,14 @@
+{
+  "name": "Kids Guessing Game",
+  "description": "Tutorial",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.1.0.153",
+  "projectVersion": "1.0.6597.33341",
+  "packOptions": {},
+  "runtimeOptions": {}
+}
